@@ -227,7 +227,7 @@ Promise.all([wasmBlob, currency]).then(([buffer, currencyDataRes]) => {
 		let quote = document.createElement("blockquote");
 		quote.innerText = queryString;
 		let permalink = document.createElement("a");
-		permalink.href = `${location.origin}/?q=${queryString}`;
+		permalink.href = `${location.origin}/?q=${encodeURIComponent(queryString)}`;
 		permalink.text = "#";
 		quote.appendChild(permalink);
 		rinkDiv.appendChild(quote);
